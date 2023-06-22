@@ -1,0 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.card {
+    padding: 25px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}

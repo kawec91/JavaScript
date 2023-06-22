@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Style-->
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body id="my-theme">
+    <!--Header-->
+    <header>
+      <!--Color Container-->
+      <div>
+        <!--Color Options-->
+        <select name="" id="select" size="1">
+          <option value="white">white</option>
+          <option value="red">red</option>
+          <option value="blue">blue</option>
+          <option value="black">black</option>
+        </select>
+        <!--Color Commit Button-->
+        <button onclick="changeColor()">New Color</button>
+      </div>
+      <!--Move COntainer-->
+      <div>
+        <!--Up-->
+        <button onclick="up()">UP</button>
+        <!--Down-->
+        <button onclick="down()">DOWN</button>
+        <!--Left-->
+        <button onclick="left()">Left</button>
+        <!--Right-->
+        <button onclick="right()">Right</button>
+      </div>
+      <!--Theme Container-->
+      <div>
+        <!--DarkStyle-->
+        <button onclick="darkTheme()">Dark</button>
+        <!--whiteStyle-->
+        <button onclick="whiteTheme()">White</button>
+      </div>
+    </header>
+    <!--Main-->
+    <main id="my-main">
+      <div id="container">
+        <!---->
+        <div class="text" id="text-box">
+          <p id="text">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus
+            iste officiis repellat cum ullam quidem sequi consequatur similique
+            incidunt, fugit perspiciatis voluptas numquam obcaecati at ut ipsum
+            ipsa sit omnis vero, optio unde. Ex, ab minus exercitationem
+            reprehenderit recusandae facilis suscipit eaque alias ipsa
+            asperiores necessitatibus autem, odit explicabo deleniti corporis.
+            Saepe amet repellat a praesentium delectus doloremque at eum, alias,
+            nesciunt molestiae dolores excepturi! Dicta in velit necessitatibus.
+            Autem enim culpa nisi, exercitationem aliquid quasi asperiores, sit
+            vel, recusandae ipsum voluptatem temporibus dolor omnis pariatur
+            esse praesentium nobis porro necessitatibus reprehenderit
+            repudiandae deleniti. Pariatur in laboriosam magni earum, asperiores
+            corrupti nisi quae ratione officia quod ipsam sit voluptatibus,
+            fugiat facere eius hic rem quasi! Quaerat odio eos provident placeat
+            aliquam, debitis dolore voluptates id ratione repellendus suscipit
+            officia magnam officiis? Exercitationem praesentium adipisci, quod
+            ipsam velit distinctio magnam, facilis odit deleniti eligendi
+            laboriosam, ab animi autem ex. Aliquam, voluptatibus?
+          </p>
+        </div>
+      </div>
+    </main>
+    <!--JavaScript-->
+    <script src="index.js"></script>
+  </body>
+</html>

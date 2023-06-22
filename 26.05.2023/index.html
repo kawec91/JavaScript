@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <button onclick="grayOn(1)">GrayScale On</button>
+      <button onclick="grayOn(0)">GrayScale Off</button>
+      <button onclick="dropShadow(1)">Drop-Shadow On</button>
+      <button onclick="dropShadow(0)">Drop-Shadow Off</button>
+      <button onclick="blurOn(1)">Blur On</button>
+      <button onclick="blurOn(0)">Blur Off</button>
+      <div>
+        Rotate
+        <button onclick="rotateImg(1)">+</button>
+        <button onclick="rotateImg(0)">-</button>
+      </div>
+    </header>
+    <main>
+      <!--Shadow-->
+      <div id="shadow-level">
+        <!--Gray-->
+        <div id="grayscale-level">
+          <!--Blur-->
+          <div id="blur-level">
+            <!--img-->
+            <img
+              src="https://mediaim.expedia.com/destination/1/15a603647565a2cf94ca9c8a3378adaf.jpg"
+              alt=""
+              id="img"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--JavaScript-->
+    <script src="index.js"></script>
+  </body>
+</html>

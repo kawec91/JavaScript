@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button onclick="TypeText()">Type Text</button>
+    <div class="chat-container" id="chat"></div>
+    <label for="">Das letzte Element bearbeiten:</label><br />
+    <input type="text" onkeydown="LiveTypeInTextField()" id="textfeld" />
+    <button onclick="Leeren()">Leeren</button>
+    <!--JavaScript-->
+    <script src="index.js"></script>
+  </body>
+</html>

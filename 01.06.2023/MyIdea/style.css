@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.mainCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: cadetblue;
+    border-radius: 5px;
+    height: 350px;
+    gap: 25px;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+
+/* LEFT IMAGE */
+.mainCard .image-wrapper {
+    height: 100%;
+    border-radius: 10px;
+}
+
+.mainCard .image-wrapper img {
+    object-fit: cover;
+    max-width: 500px;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* CENTER CONTENT */
+.mainCardMainContentContainer {
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mainCardMainContentContainerTitle {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.mainCardMainContentContainerContent {
+    gap: 10px;
+
+}
+
+.mainCardMainContentContainerContent p {
+    font-size: 20px;
+}
+
+.button-container {
+    width: 100%;
+}
+
+.mainCardButton {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* RIGHT FLAGS */
+.mainCardMainContentContainerExtras {
+    height: 100%;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.mainCardMainContentContainerExtras .mainCardMainContentContainerExtrasImage {
+    width: 100%;
+    height: 100%;
+}
+
+.mainCardMainContentContainerExtras .mainCardMainContentContainerExtrasImage img {
+    width: 260px;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/* INFO CARD */
+.info-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: cadetblue;
+    border-radius: 5px;
+    height: 350px;
+    gap: 25px;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+
+.button-vertical {
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    width: 100px;
+    cursor: pointer;
+    filter: invert(96%) sepia(4%) saturate(543%) hue-rotate(45deg) brightness(118%) contrast(100%);
+}
+
+.info-card .image-wrapper {
+    height: 80%;
+    min-width: 30%;
+}
+
+.info-card .image-wrapper img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.info-card-content {
+    height: 80%;
+    width: 100%;
+    color: white;
+}

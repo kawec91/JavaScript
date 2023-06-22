@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Style CSS-->
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <!--Header-->
+  <header>
+    <!--Navigation-->
+    <div class="buttons-container">
+      <div class="buttons-box">
+        <div class="empty"></div>
+        <div class="button-wrapper"><button onclick="up()">UP</button></div>
+        <div class="empty"></div>
+      </div>
+      <div class="buttons-box">
+        <div class="button-wrapper"><button onclick="left()">Left</button></div>
+        <div class="empty"></div>
+        <div class="button-wrapper">
+          <button onclick="right()">Right</button>
+        </div>
+      </div>
+      <div class="buttons-box">
+        <div class="empty"></div>
+        <div class="button-wrapper"><button onclick="down()">DOWN</button></div>
+        <div class="empty"></div>
+      </div>
+    </div>
+    <!--Info-->
+    <div class="msg-box" id="msg"></div>
+  </header>
+  <!--Main -->
+  <main>
+    <!--LeftSidebar-->
+    <div class="left-sidebar">
+      <div class="friends-list">
+        Channels: <br /><br />
+        1. Chat <br />
+        2. Trade <br />
+        <hr />
+        Friend List: <br /><br />
+        Nickname 1 <br />
+        Nickname 2 <br />
+        Nickname 3 <br />
+        Nickname 4 <br />
+      </div>
+      <div class="chat">
+        Chat <br />
+        <br />
+        lorem ipsum<br />
+        lorem ipsum lorem ipsum<br />
+        ....<br />
+      </div>
+    </div>
+    <!--MainContainer-->
+    <div class="main-container">
+      <!--Map Wrapper-->
+      <div class="map-wrapper">
+        <!--Map-->
+        <div class="map" id="map">
+          <!--Ask Box-->
+          <div class="hide" id="home-1">
+            <!--Enter-->
+            <div class="home-enter-content hide" id="home1-enter">
+              <h3>Do you wanna go in?</h3>
+              <div>
+                <button onclick="city1School()">yes</button>
+                <button onclick="homeNo()">no</button>
+              </div>
+            </div>
+            <!--Out-->
+            <div class="home-enter-content hide" id="home1-out">
+              <h3>Do you wanna go out?</h3>
+              <div>
+                <button onclick="city1SchoolToCity1()">yes</button>
+                <button onclick="homeNoOut()">no</button>
+              </div>
+            </div>
+          </div>
+          <!--End of Ask Box-->
+        </div>
+        <!--End of Map-->
+        <!--Character-->
+        <div class="character" id="character"></div>
+        <!--End Character-->
+      </div>
+      <!--DialogBox-->
+      <div class="dialog-box">
+        Info & Dialog:<br /><br />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+        perferendis reiciendis nostrum placeat libero ipsa maiores repellat et
+        tenetur voluptatibus? Ullam architecto vel id ipsam, recusandae neque
+        ipsum quibusdam impedit, quae aspernatur animi mollitia quis repudiandae
+        non beatae tenetur labore vero quaerat sunt nam. Animi sed ab iste
+        commodi deserunt debitis hic officiis, nulla magni sunt cum esse illum
+        enim rem! Dolorem quaerat saepe aperiam quidem et?
+      </div>
+    </div>
+    <div class="right-sidebar">
+      <div class="quest-list">
+        <h3>Quest List</h3>
+        <br />
+        <div class="quest-box">
+          <h5>Quest Name</h5>
+          <p>Find Dr.Shock in CityName</p>
+        </div>
+        <div class="quest-box">
+          <h5>Quest Name 2</h5>
+          <p>Travel to CityName2 and find Lukasz</p>
+        </div>
+        <div class="quest-box">
+          <h5>Quest Name</h5>
+          <p>Win a battle with Patrick in CityName3</p>
+        </div>
+      </div>
+      <div class="rank">
+        TOP 5 Players<br /><br />
+        1. Nickname <br />
+        2. Nickname <br />
+        3. Nickname <br />
+        4. Nickname <br />
+        5. Nickname <br />
+      </div>
+      <div class="my-team">
+        My Pokemon:<br /><br />
+        1. LVL Name HP TYPE <br />
+        2. LVL Name HP TYPE <br />
+        3. LVL Name HP TYPE <br />
+        4. LVL Name HP TYPE <br />
+        5. LVL Name HP TYPE <br />
+      </div>
+      <div class="btn-menu">
+        <div class="btn-key">
+          <img src="./img/icon-arrow.png" alt="" class="up" onclick="up()" />
+          <div class="key-name">up</div>
+        </div>
+        <div class="btn-key">
+          <img src="./img/icon-arrow.png" alt="" onclick="down()" />
+          <div class="key-name">down</div>
+        </div>
+        <div class="btn-key">
+          <img
+            src="./img/icon-arrow.png"
+            alt=""
+            class="left"
+            onclick="left()"
+          />
+          <div class="key-name">left</div>
+        </div>
+        <div class="btn-key">
+          <img
+            src="./img/icon-arrow.png"
+            alt=""
+            class="right"
+            onclick="right()"
+          />
+          <div class="key-name">right</div>
+        </div>
+
+        Action 1<br />
+        Action 2<br />
+      </div>
+    </div>
+  </main>
+  <!--Footer-->
+  <footer>
+    <!--footer-->
+  </footer>
+  <body>
+    <!--JavaScript-->
+    <script src="index.js"></script>
+  </body>
+</html>

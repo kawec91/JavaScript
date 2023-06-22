@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main id="ausgabe"></main>
+    <div class="search-container">
+      <div class="search-box">
+        <select name="keyOptions" id="keyOptions">
+          <option value="vorname">Vorname</option>
+          <option value="nachname">Nachname</option>
+          <option value="alter">Alt</option>
+          <option value="adresse">Adresse</option>
+        </select>
+        <input type="search" name="" id="search" />
+        <button onclick="submitSearch()">Search</button>
+      </div>
+      <div id="result-box-title"></div>
+      <div id="result-box"></div>
+    </div>
+    <!--JavaScript-->
+    <script src="index.js"></script>
+  </body>
+</html>

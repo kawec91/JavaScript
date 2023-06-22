@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.profilCard {
+    background-color: burlywood;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.card {
+    padding: 35px;
+    border: 1px solid black;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: inset 0px 0px 30px rgba(0, 0, 0, 0.302);
+    transition: 0.5s;
+}
+
+.name {
+    display: flex;
+    justify-content: space-between;
+    font-size: 32px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.card img {
+    filter: blur(4px) sepia(1);
+}
+
+.card:hover {
+    box-shadow: 0px 0px 20px white;
+    transition: 0.5s;
+}
+
+.card:hover .name {
+    justify-content: center;
+}
+
+.card:hover img {
+    filter: blur(0px) sepia(0);
+}
+
+.card:hover {
+    background-color: darkkhaki;
+    color: white;
+}
