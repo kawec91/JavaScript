@@ -20,6 +20,7 @@ function createImage(img) {
 function createButton(text, func) {
   return `<button onclick="${func}">${text}</button>`;
 }
+//Add to list and rebuild list in HTML
 function addToList(id, text, listId) {
   let conn = document.getElementById(listId);
   todoArray.push({ id: id, text: text });
@@ -27,10 +28,12 @@ function addToList(id, text, listId) {
   conn.innerHTML = createListe(todoArray, "listResult");
   console.log(todoArray);
 }
+//Clear input field value
 function btnClear(id) {
   let conn = document.getElementById(id);
   conn.value = "";
 }
+//Confirm input field value, show it in alert, add values to list, set felt to empty
 function btnConfirm(id) {
   let conn = document.getElementById(id);
   alert(`New TODO added: ${conn.value}`);
