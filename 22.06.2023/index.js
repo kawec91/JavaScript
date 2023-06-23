@@ -38,19 +38,21 @@ function btnConfirm(id) {
   conn.value = "";
 }
 function btnEdit(id) {
-  //console.log(`btnEdit ${id}`);
   let conn = todoArray.find((x) => x.id === id);
+  let connHtml = document.getElementById(id);
   let oldText = conn.text;
-  //console.log(oldText);
   let newText = prompt(`Old text: ${oldText}, let's make some changes!`);
-  //console.log(newText);
   conn.text = newText;
+  connHtml.innerHTML = `${newText} ${createButton(
+    "Edit",
+    `btnEdit(${id})`
+  )} ${createButton("Delete", `btnDelete(${id})`)}`;
   console.log(conn.text);
 }
 function btnDelete(id) {
   console.log(todoArray);
   let conn = todoArray.find((x) => x.id === id);
-  todoArray.p;
+  //TODO
   console.log(todoArray);
 }
 function createListe(array, id) {
