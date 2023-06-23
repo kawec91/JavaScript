@@ -38,25 +38,39 @@ function btnConfirm(id) {
   conn.value = "";
 }
 function btnEdit(id) {
+  //Conn with liste (and search object id)
   let conn = todoArray.find((x) => x.id === id);
+  //Conn with HTML
   let connHtml = document.getElementById(id);
+  //Take value from object and save it
   let oldText = conn.text;
+  //Show old value and ask for new one
   let newText = prompt(`Old text: ${oldText}, let's make some changes!`);
+  //Change value on object
   conn.text = newText;
+  //Show in html
   connHtml.innerHTML = `${newText} ${createButton(
     "Edit",
     `btnEdit(${id})`
   )} ${createButton("Delete", `btnDelete(${id})`)}`;
+  //show in console
   console.log(conn.text);
 }
 function btnDelete(id) {
   console.log(todoArray);
-  let conn = todoArray.find((x) => x.id === id);
+  //Conn with liste (and search object id)
+  let conn = todoArray.findIndex((x) => x.id === id);
+  //Con with html
+  let connHtml = document.getElementById(id);
+  //Remove Object from list
+  todoArray.splice(conn, 1);
   //TODO
   console.log(todoArray);
+  //Return HTML without HTML-ELEMENT
+  return connHtml.parentNode.removeChild(connHtml);
 }
-function createListe(array, id) {
-  let conn = document.getElementById(id);
+//Create List Items
+function createListe(array) {
   let result = "";
   for (let i = 0; i < array.length; i++) {
     result += `
@@ -69,9 +83,11 @@ function createListe(array, id) {
   }
   return result;
 }
+//Create Box with TODOs
 function createListeBox(element, array, id) {
-  return `<${element} id="${id}">${createListe(array, id)}</${element}>`;
+  return `<${element} id="${id}">${createListe(array)}</${element}>`;
 }
+//Create our App
 function createApp(liste) {
   conWithInhalt.innerHTML += `
     ${createBlock(
@@ -87,5 +103,5 @@ function createApp(liste) {
     )}
     `;
 }
-
+//Call function
 createApp(todoArray);
