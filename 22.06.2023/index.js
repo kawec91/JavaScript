@@ -24,7 +24,7 @@ function addToList(id, text, listId) {
   let conn = document.getElementById(listId);
   todoArray.push({ id: id, text: text });
   todoArrayIdNumber++;
-  conn.innerHTML = createListe("ol", todoArray, "listResultLi");
+  conn.innerHTML = createListe(todoArray, "listResult");
   console.log(todoArray);
 }
 function btnClear(id) {
@@ -53,11 +53,9 @@ function btnDelete(id) {
   todoArray.p;
   console.log(todoArray);
 }
-function createListe(element, array, id) {
+function createListe(array, id) {
+  let conn = document.getElementById(id);
   let result = "";
-  //TODO: BtnEdit
-  //TODO: BtnDelete
-  //TODO: List Live Update
   for (let i = 0; i < array.length; i++) {
     result += `
     <li id="${array[i].id}">
@@ -67,8 +65,10 @@ function createListe(element, array, id) {
     </li>
     `;
   }
-
-  return `<${element} id="${id}">${result}</${element}>`;
+  return result;
+}
+function createListeBox(element, array, id) {
+  return `<${element} id="${id}">${createListe(array, id)}</${element}>`;
 }
 function createApp(liste) {
   conWithInhalt.innerHTML += `
@@ -80,7 +80,7 @@ function createApp(liste) {
        ${createButton("Confirm", "btnConfirm(1)")} 
        ${createButton("Clear", "btnClear(1)")}
        ${createBlock("span", "<hr>")}
-       ${createListe("div", liste, "listResult")}
+       ${createListeBox("ol", liste, "listResult")}
        `
     )}
     `;
