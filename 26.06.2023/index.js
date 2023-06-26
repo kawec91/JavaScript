@@ -33,16 +33,18 @@ function showOrder(liste) {
         <div>Menge</div>
         <div>Preis</div>
     </div>
+    <div id="orderList">
     `;
   for (let i = 0; i < liste.length; i++) {
     result += `
-        <tr>
-            <td>${liste[i].p}</td>
-            <td>${liste[i].m}</td>
-            <td>${liste[i].k}</td>
-        </tr>
+        <div>
+            <div>${liste[i].p}</div>
+            <div>${liste[i].m}</div>
+            <div>${liste[i].k}</div>
+        </div>
     `;
   }
+  result += `</div>`;
   connWithWk.innerHTML += result;
 }
 
@@ -89,6 +91,7 @@ function addItem() {
   const connProduct = document.getElementById("product");
   const connMenge = document.getElementById("menge");
   const connPreis = document.getElementById("preis");
+  const connOrderList = document.getElementById("orderList");
   //AddToList
   einkaufsliste.push({
     p: connProduct.value,
@@ -96,10 +99,23 @@ function addItem() {
     k: parseFloat(connPreis.value),
   });
   //AddToHTML
+  connOrderList.innerHTML += `
+        <div>
+            <div>${connProduct.value}</div>
+            <div>${parseFloat(connMenge.value)}</div>
+            <div>${newPriceFormat(connPreis.value)}</div>
+        </div>
+        `;
   //Clear Field
   connProduct.value = "";
   connMenge.value = "";
   connPreis.value = "";
+}
+//Show message in Alert clear html and list
+function confirmOrder() {
+  alert("Thank for your order.");
+  connWithWk.innerHTML = "";
+  connWithPrice.innerHTML = "";
 }
 //Calls
 showOrder(einkaufsliste);
