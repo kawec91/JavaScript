@@ -75,6 +75,8 @@ function endPrice(liste) {
   MwSt: <br>
   `;
 }
+//change price . to , and show only 2 sign after
+function newPriceFormat(price) {}
 
 //Calls
 showOrder(einkaufsliste);
