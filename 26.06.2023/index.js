@@ -50,7 +50,32 @@ function showOrder(liste) {
 }
 
 //Calculate and Show End Price
-function endPrice() {}
+function endPrice(liste) {
+  let standardPreisBrutto = 0,
+    rabat = 0,
+    rabatPreisBrutto = 0,
+    nettoPreis = 0,
+    mwst = 0;
+
+  for (let i = 0; i < liste.length; i++) {
+    standardPreisBrutto += liste[i].m * liste[i].k;
+  }
+
+  rabat = standardPreisBrutto * 0.19;
+  rabatPreisBrutto = standardPreisBrutto - rabat;
+  mwst = rabatPreisBrutto * 0.19;
+  nettoPreis = rabatPreisBrutto - mwst;
+  console.log(standardPreisBrutto, rabat, rabatPreisBrutto, mwst, nettoPreis);
+
+  connWithPrice.innerHTML += `
+  Normalpreis-Brutto: <br>
+  Rabatt: <br>
+  Rabatpreis-Brutto: <br>
+  Netto: <br>
+  MwSt: <br>
+  `;
+}
 
 //Calls
 showOrder(einkaufsliste);
+endPrice(einkaufsliste);
