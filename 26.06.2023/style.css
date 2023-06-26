@@ -1,0 +1,33 @@
+.korb {
+    background-color: darkkhaki;
+    padding: 25px;
+}
+
+.korbHeader {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px dashed black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.orderList {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed black;
+}
+
+.price {
+    background-color: lightskyblue;
+    text-align: right;
+    padding: 25px;
+}
+
+.newProduct {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}

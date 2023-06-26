@@ -28,16 +28,16 @@ const connWithPrice = document.getElementById("price");
 //Show our order
 function showOrder(liste) {
   result = `
-    <div>
+    <div class="korbHeader">
         <div>Produkt</div>
         <div>Menge</div>
         <div>Preis</div>
     </div>
-    <div id="orderList">
+    <div id="orderList" >
     `;
   for (let i = 0; i < liste.length; i++) {
     result += `
-        <div>
+        <div class="orderList">
             <div>${liste[i].p}</div>
             <div>${liste[i].m}</div>
             <div>${liste[i].k}</div>
@@ -66,11 +66,11 @@ function endPrice(liste) {
   nettoPreis = rabatPreisBrutto - mwst;
 
   connWithPrice.innerHTML += `
-  Normalpreis-Brutto: <br>
-  Rabatt: <br>
+  Normalpreis-Brutto: ${newPriceFormat(standardPreisBrutto)}<br>
+  Rabatt: ${newPriceFormat(rabat)}<br>
   Rabatpreis-Brutto: ${newPriceFormat(rabatPreisBrutto)}<br>
-  Netto: <br>
-  MwSt: <br>
+  Netto: ${newPriceFormat(nettoPreis)}<br>
+  MwSt: ${newPriceFormat(mwst)}<br>
   `;
 }
 //change price . to , and show only 2 sign after
