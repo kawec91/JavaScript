@@ -23,8 +23,9 @@ let einkaufsliste = [
 ];
 //Connections
 const connWithWk = document.getElementById("wk");
-console.log(connWithWk);
+const connWithPrice = document.getElementById("price");
 //Functions
+//Show our order
 function showOrder(liste) {
   result = `
     <table>
@@ -45,9 +46,11 @@ function showOrder(liste) {
     `;
   }
   result += `</table>`;
-  console.log(result);
   connWithWk.innerHTML += result;
 }
+
+//Calculate and Show End Price
+function endPrice() {}
 
 //Calls
 showOrder(einkaufsliste);
