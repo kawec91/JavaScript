@@ -40,12 +40,13 @@ function showOrder(liste) {
         <div class="orderList">
             <div>${liste[i].p}</div>
             <div>${liste[i].m}</div>
-            <div>${liste[i].k}</div>
+            <div>${newPriceFormat(liste[i].k.toFixed(2))}</div>
         </div>
     `;
   }
   result += `</div>`;
   connWithWk.innerHTML += result;
+  endPrice(einkaufsliste);
 }
 
 //Calculate and Show End Price
@@ -65,29 +66,36 @@ function endPrice(liste) {
   mwst = rabatPreisBrutto * 0.19;
   nettoPreis = rabatPreisBrutto - mwst;
 
-  connWithPrice.innerHTML += `
-  Normalpreis-Brutto: ${newPriceFormat(standardPreisBrutto)}<br>
-  Rabatt: ${newPriceFormat(rabat)}<br>
-  Rabatpreis-Brutto: ${newPriceFormat(rabatPreisBrutto)}<br>
-  Netto: ${newPriceFormat(nettoPreis)}<br>
-  MwSt: ${newPriceFormat(mwst)}<br>
+  connWithPrice.innerHTML = `
+  Normalpreis-Brutto: ${newPriceFormat(standardPreisBrutto.toFixed(2))}<br>
+  Rabatt: ${newPriceFormat(rabat.toFixed(2))}<br>
+  Rabatpreis-Brutto: ${newPriceFormat(rabatPreisBrutto.toFixed(2))}<br>
+  Netto: ${newPriceFormat(nettoPreis.toFixed(2))}<br>
+  MwSt: ${newPriceFormat(mwst.toFixed(2))}<br>
   `;
 }
-//change price . to , and show only 2 sign after
+//change price . to , and show result as float number length 2
 function newPriceFormat(price) {
+  //number to string
   let newPrice = price.toString();
+  //string to list
   newPrice = newPrice.split("");
   //Find . and replace wit ,
-  newPrice.splice(newPrice.indexOf("."), 1, ",");
+  if (newPrice.indexOf(".") !== -1) {
+    newPrice.splice(newPrice.indexOf("."), 1, ",");
+  }
+  //new variable
   let newPriceNumber = ``;
+  //from list to one string
   for (let i = 0; i < newPrice.length; i++) {
     newPriceNumber += newPrice[i];
   }
+  //string + euro ang give it back
   return newPriceNumber + ` &euro;`;
 }
 //Add item to list
 function addItem() {
-  //Verbindung
+  //Connections
   const connProduct = document.getElementById("product");
   const connMenge = document.getElementById("menge");
   const connPreis = document.getElementById("preis");
@@ -96,27 +104,50 @@ function addItem() {
   einkaufsliste.push({
     p: connProduct.value,
     m: parseFloat(connMenge.value),
-    k: parseFloat(connPreis.value),
+    k: checkRightInputNumberFormat(connPreis.value),
   });
   //AddToHTML
   connOrderList.innerHTML += `
-        <div>
+        <div class="orderList">
             <div>${connProduct.value}</div>
             <div>${parseFloat(connMenge.value)}</div>
-            <div>${newPriceFormat(connPreis.value)}</div>
+            <div>${parseFloat(connPreis.value)}</div>
         </div>
         `;
   //Clear Field
   connProduct.value = "";
   connMenge.value = "";
   connPreis.value = "";
+  connWithWk.innerHTML = "";
+  //Call function
+  showOrder(einkaufsliste);
 }
 //Show message in Alert clear html and list
 function confirmOrder() {
+  //message
   alert("Thank for your order.");
+  //clear html list
   connWithWk.innerHTML = "";
+  //clear html price
   connWithPrice.innerHTML = "";
+}
+//Change , to . in number
+function checkRightInputNumberFormat(number) {
+  //from number to list of strings
+  let checkNumber = number.toString().split("");
+  //when , exist
+  if (checkNumber.indexOf(",") !== -1) {
+    //replace , with .
+    checkNumber.splice(checkNumber.indexOf(","), 1, ".");
+  }
+  //new variable
+  let rightFormat = "";
+  //from list to one string
+  for (let i = 0; i < checkNumber.length; i++) {
+    rightFormat += checkNumber[i];
+  }
+  //convert string to number and give it back
+  return parseFloat(rightFormat);
 }
 //Calls
 showOrder(einkaufsliste);
-endPrice(einkaufsliste);
