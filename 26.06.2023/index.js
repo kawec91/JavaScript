@@ -28,13 +28,11 @@ const connWithPrice = document.getElementById("price");
 //Show our order
 function showOrder(liste) {
   result = `
-    <table>
-        <tr>
-            <td>Produkt</td>
-            <td>Menge</td>
-            <td>Preis</td>
-        </tr>
-    
+    <div>
+        <div>Produkt</div>
+        <div>Menge</div>
+        <div>Preis</div>
+    </div>
     `;
   for (let i = 0; i < liste.length; i++) {
     result += `
@@ -45,7 +43,6 @@ function showOrder(liste) {
         </tr>
     `;
   }
-  result += `</table>`;
   connWithWk.innerHTML += result;
 }
 
@@ -65,19 +62,45 @@ function endPrice(liste) {
   rabatPreisBrutto = standardPreisBrutto - rabat;
   mwst = rabatPreisBrutto * 0.19;
   nettoPreis = rabatPreisBrutto - mwst;
-  console.log(standardPreisBrutto, rabat, rabatPreisBrutto, mwst, nettoPreis);
 
   connWithPrice.innerHTML += `
   Normalpreis-Brutto: <br>
   Rabatt: <br>
-  Rabatpreis-Brutto: <br>
+  Rabatpreis-Brutto: ${newPriceFormat(rabatPreisBrutto)}<br>
   Netto: <br>
   MwSt: <br>
   `;
 }
 //change price . to , and show only 2 sign after
-function newPriceFormat(price) {}
-
+function newPriceFormat(price) {
+  let newPrice = price.toString();
+  newPrice = newPrice.split("");
+  //Find . and replace wit ,
+  newPrice.splice(newPrice.indexOf("."), 1, ",");
+  let newPriceNumber = ``;
+  for (let i = 0; i < newPrice.length; i++) {
+    newPriceNumber += newPrice[i];
+  }
+  return newPriceNumber + ` &euro;`;
+}
+//Add item to list
+function addItem() {
+  //Verbindung
+  const connProduct = document.getElementById("product");
+  const connMenge = document.getElementById("menge");
+  const connPreis = document.getElementById("preis");
+  //AddToList
+  einkaufsliste.push({
+    p: connProduct.value,
+    m: parseFloat(connMenge.value),
+    k: parseFloat(connPreis.value),
+  });
+  //AddToHTML
+  //Clear Field
+  connProduct.value = "";
+  connMenge.value = "";
+  connPreis.value = "";
+}
 //Calls
 showOrder(einkaufsliste);
 endPrice(einkaufsliste);
