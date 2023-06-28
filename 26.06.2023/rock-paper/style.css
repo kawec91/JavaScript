@@ -1,0 +1,19 @@
+.score {
+    display: flex;
+    justify-content: space-around;
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 250px;
+}

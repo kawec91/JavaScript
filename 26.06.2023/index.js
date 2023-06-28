@@ -68,7 +68,7 @@ function endPrice(liste) {
 
   connWithPrice.innerHTML = `
   Normalpreis-Brutto: ${newPriceFormat(standardPreisBrutto.toFixed(2))}<br>
-  Rabatt: ${newPriceFormat(rabat.toFixed(2))}<br>
+  Rabatt (15%): ${newPriceFormat(rabat.toFixed(2))}<br>
   Rabatpreis-Brutto: ${newPriceFormat(rabatPreisBrutto.toFixed(2))}<br>
   Netto: ${newPriceFormat(nettoPreis.toFixed(2))}<br>
   MwSt: ${newPriceFormat(mwst.toFixed(2))}<br>

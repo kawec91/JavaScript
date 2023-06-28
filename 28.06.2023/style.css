@@ -1,0 +1,17 @@
+.text-design {
+    border-bottom: 3px dashed gray;
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: burlywood;
+}
+
+.descriptionTitel {
+    color: green;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.descriptionDetails {
+    color: cadetblue;
+}
