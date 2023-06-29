@@ -1,0 +1,13 @@
+.main-style {}
+
+.navigation {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    justify-content: center;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: black;
+}
