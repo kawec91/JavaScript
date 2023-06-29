@@ -9,10 +9,10 @@ const myObject = {
   imageText:
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati similique ex laboriosam recusandae amet fugiat, laudantium assumenda itaque culpa reprehenderit veniam non, vero impedit. Natus.",
   liste: [
-    { name: "Kartoffel", path: "" },
-    { name: "Karotte", path: "" },
-    { name: "Kiwi", path: "" },
-    { name: "Kakao", path: "" },
+    { name: "Kartoffel", path: "https://de.wikipedia.org/wiki/Kartoffel" },
+    { name: "Karotte", path: "https://de.wikipedia.org/wiki/Karotte" },
+    { name: "Kiwi", path: "https://de.wikipedia.org/wiki/Kiwifrucht" },
+    { name: "Kakao", path: "https://de.wikipedia.org/wiki/Kakao" },
   ],
 };
 
@@ -56,7 +56,7 @@ function createUl(liste) {
   for (let i = 0; i < liste.length; i++) {
     samm += `
     
-        ${createLi(liste[i].name, liste[i].path)}
+        ${createLi(liste[i].name, liste[i].path, "")}
     `;
   }
   samm += `</ul>`;
@@ -67,20 +67,20 @@ function createOl(liste) {
   for (let i = 0; i < liste.length; i++) {
     samm += `
       
-          ${createLi(liste[i].name, liste[i].path)}
+          ${createLi(liste[i].name, liste[i].path, "_blank")}
       `;
   }
   samm += `</ol>`;
   return samm;
 }
-function createLi(name, path) {
-  return `<li><a href="${path}" style="text-decoration: none; color: black;">${name}</a></li>`;
+function createLi(name, path, target) {
+  return `<li><a href="${path}" target="${target}" style="text-decoration: none; color: black;">${name}</a></li>`;
 }
 //Show in HTM
 function createApp(object) {
   const connWithBody = document.getElementById("id");
   connWithBody.innerHTML =
-    createHeader(object) + createMain("main-style", myObject);
+    createHeader(object) + createMain("main-style", object);
 }
 
 //Call function
