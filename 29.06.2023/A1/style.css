@@ -16,7 +16,6 @@ img {
 .navigation {
     display: flex;
     list-style: none;
-    gap: 15px;
     justify-content: center;
     color: white;
 }
@@ -32,6 +31,7 @@ img {
 
 .div-right {
     background-color: bisque;
+    padding-left: 15px;
 }
 
 .div-right ol {

@@ -17,8 +17,44 @@ const myObject = {
 };
 
 //Function
+function createImage(link) {
+  return `<img src="${link}" alt="photo">`;
+}
+function createPElement(text) {
+  return `<p>${text}</p>`;
+}
 function createHeader(object) {
   return `<header class="header">${createUl(object.menu)}</header>`;
+}
+function createLi(name, path, target) {
+  return `<li><a href="${path}" target="${target}" style="text-decoration: none; color: black;">${name}</a></li>`;
+}
+function createUl(liste) {
+  let samm = `<ul class="navigation">`;
+  for (let i = 0; i < liste.length; i++) {
+    samm += `
+      
+          ${createLi(liste[i].name, liste[i].path, "")}
+      `;
+  }
+  samm += `</ul>`;
+  return samm;
+}
+function createOl(liste) {
+  let samm = `<ol style="">`;
+  for (let i = 0; i < liste.length; i++) {
+    samm += `
+        
+            ${createLi(liste[i].name, liste[i].path, "_blank")}
+        `;
+  }
+  samm += `</ol>`;
+  return samm;
+}
+function createDiv(className, htmlElement1, htmlElement2, htmlElement3) {
+  return `<div class="${className}">${
+    htmlElement1 + htmlElement2 + htmlElement3
+  }</div>`;
 }
 function createMain(className, object) {
   return `<main class="${className}">
@@ -40,42 +76,7 @@ function createMain(className, object) {
   }
 </main>`;
 }
-function createDiv(className, htmlElement1, htmlElement2, htmlElement3) {
-  return `<div class="${className}">${
-    htmlElement1 + htmlElement2 + htmlElement3
-  }</div>`;
-}
-function createImage(link) {
-  return `<img src="${link}" alt="photo">`;
-}
-function createPElement(text) {
-  return `<p>${text}</p>`;
-}
-function createUl(liste) {
-  let samm = `<ul class="navigation">`;
-  for (let i = 0; i < liste.length; i++) {
-    samm += `
-    
-        ${createLi(liste[i].name, liste[i].path, "")}
-    `;
-  }
-  samm += `</ul>`;
-  return samm;
-}
-function createOl(liste) {
-  let samm = `<ol style="">`;
-  for (let i = 0; i < liste.length; i++) {
-    samm += `
-      
-          ${createLi(liste[i].name, liste[i].path, "_blank")}
-      `;
-  }
-  samm += `</ol>`;
-  return samm;
-}
-function createLi(name, path, target) {
-  return `<li><a href="${path}" target="${target}" style="text-decoration: none; color: black;">${name}</a></li>`;
-}
+
 //Show in HTM
 function createApp(object) {
   const connWithBody = document.getElementById("id");
