@@ -1,13 +1,48 @@
-.main-style {}
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.main-style {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 25px
+}
+
+img {
+    width: 100%;
+}
 
 .navigation {
     display: flex;
     list-style: none;
     gap: 15px;
     justify-content: center;
+    color: white;
 }
 
 .navigation a {
     text-decoration: none;
     color: black;
+}
+
+.div-left {
+    background-color: aqua;
+}
+
+.div-right {
+    background-color: bisque;
+}
+
+.div-right ol {
+    margin-left: 20px;
+}
+
+.header {
+    background-color: cornflowerblue;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
